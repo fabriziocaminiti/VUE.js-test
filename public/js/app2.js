@@ -31596,8 +31596,26 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
-var app = vue__WEBPACK_IMPORTED_MODULE_0___default()({
-  el: '#app'
+var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
+  el: '#app',
+  data: function data() {
+    return {
+      title: 'Progetto in Vue',
+      description: 'vue utilizza javascript',
+      show: true
+    };
+  },
+  methods: {
+    toUppercase: function toUppercase(string) {
+      return string.toUpperCase();
+    },
+    toLowercase: function toLowercase(string) {
+      return string.toLowerCase();
+    },
+    titletoUppercase: function titletoUppercase(string) {
+      return this.title.toUpperCase();
+    }
+  }
 });
 
 /***/ }),

@@ -13,7 +13,10 @@
         <!-- Styles -->
     </head>
     <body class="antialiased">
+       <div id="app">
        @yield('content')
-       <script src="{{ mix('js/app.js') }}"></script>
+       </div>
+    
+       <script src="{{ mix('js/app2.js') }}"></script>
     </body>
 </html>

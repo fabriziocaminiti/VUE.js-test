@@ -4,9 +4,9 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-12">
-            <h1>finalmente sto cazzo di Vue</h1>
-            <p>quanto cazzo c'è voluto perchè non ho visto la chioccilina</p>
+        <div class="col-12 text-center">
+            <h1 v-if="show"> @{{titletoUppercase()}}</h1>
+            <h3>@{{toLowercase(description)}}</h3>
         </div>
     </div>
 </div>

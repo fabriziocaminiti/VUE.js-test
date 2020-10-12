@@ -31593,7 +31593,10 @@ module.exports = function(module) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
@@ -31602,7 +31605,19 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     return {
       title: 'Progetto in Vue',
       description: 'vue utilizza javascript',
-      show: true
+      show: true,
+      isDisabled: true,
+      selectedClass: 'text-danger',
+      colorClass: 'text-danger',
+      vueClass: 'float-left',
+      x: '',
+      y: '',
+      name: 'name',
+      isPrimary: true,
+      isCenter: true,
+      isSuccess: false,
+      isRight: true,
+      alignText: 'float-left'
     };
   },
   methods: {
@@ -31614,6 +31629,13 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     },
     titletoUppercase: function titletoUppercase(string) {
       return this.title.toUpperCase();
+    },
+    template: function template() {
+      return "\n          <p>".concat(this.title, "</p>\n          ");
+    },
+    updatecoord: function updatecoord(event) {
+      this.x = event.clientX;
+      this.y = event.clientY;
     }
   }
 });

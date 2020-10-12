@@ -16,6 +16,10 @@
        <div id="app">
        @yield('content')
        </div>
+       <div id="app2">
+           @{{dataApp()}}
+           @{{blog}}
+       </div>
     
        <script src="{{ mix('js/app2.js') }}"></script>
     </body>

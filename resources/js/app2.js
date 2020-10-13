@@ -2,7 +2,7 @@ require('./bootstrap');
 
 import Vue from 'vue';
 import { template, reduce } from 'lodash';
-
+Vue.component('app-vue',require('./custom-components/app.vue').default);
 Vue.component('button-counter',{
     data(){
         return{

@@ -29,7 +29,7 @@
 
             <div class="col-12"v-if="show" >
                     <p>Coordinate : @{{ x }}/@{{ y }} </p>
-                    <div v-on:mousemove = "updatecoord" style="background-color:blue; width:500px; height: 300px;">
+                <div v-on:mousemove = "updatecoord" style="background-color:blue; width:500px; height: 300px;">
                     <p v-on:mouseove.stop="" style="position: relative; width:200px; height: 100px;top: 100px; left: 200px; background-color: black; color: white;">RIQUADRO</p>
                 </div>
                 
@@ -95,7 +95,7 @@
                         </div>
                     </div>
                 </div>
-
+            <app-vue></app-vue>
     </div>
 </div>
 

@@ -14,12 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('vue');
-});
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia\Inertia::render('Dashboard');
 })->name('dashboard');
 Route::get('/api/users', [ApiController::class,'users']);
+Route::get('/api/user/{user_id}', [ApiController::class,'user']);
 Route::get('/{any}', [ApiController::class,'singlePage'])->where('any','.*');

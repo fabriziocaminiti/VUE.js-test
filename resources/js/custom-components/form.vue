@@ -32,6 +32,9 @@
                         <option value="javascript">javascript</option>
                     </select>
                 </div>
+                <div class="col-12 my-5">
+                <button @click="submit" class="btn btn-primary"> Invio</button>
+                </div>
             </div>
         </div>
     </div>
@@ -47,10 +50,19 @@ export default {
             hobby: 'hobby',
             checkboxValues: [],
             select: ''
-
         }
+    },
+    methods:{
+        submit(){
+            let data ={
+                name : this.name,
+            }
+            axios.post('/api/rotta-post', data).then(()=>{
+                this.$router.push({ path : '/users' });
+        });
     }
 }
+}   
 </script>
 
 <style>

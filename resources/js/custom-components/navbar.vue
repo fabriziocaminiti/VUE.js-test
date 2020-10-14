@@ -9,10 +9,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <router-link class="nav-link" to="/">Home</router-link>
+        <router-link active-class="active" class="nav-link" :to="{name:'home'}">Home</router-link>
       </li>
       <li class="nav-item">
-       <router-link class="nav-link" to="/users">Users</router-link>
+       <router-link active-class="active2" class="nav-link" :to="{name:'users'}">Users</router-link>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -45,5 +45,7 @@ export default {
 </script>
 
 <style>
-
+.active{
+  color: aqua!important;
+}
 </style>

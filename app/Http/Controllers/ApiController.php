@@ -15,4 +15,8 @@ class ApiController extends Controller
     public function singlePage(){
         return view('vue');
     }
+    public function user($user_id){
+        $user = User::find($user_id);
+        return response()->json($user);
+    }
 }

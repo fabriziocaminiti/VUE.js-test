@@ -7,8 +7,10 @@
         <p>Nome :{{user.name}} </p>
         <p>Email :{{user.email}}</p>
         <p>Creato il :{{user.created_at}}</p>
+        <button @click="$router.push ('/user/' + user.id)" class="btn btn-info">Vai</button>
       </div>
      </div>
+     
    </div> 
 </div>   
 </template>
@@ -23,6 +25,7 @@ export default {
         axios.get('/api/users').then((response)=>{
            this.users = response.data
            console.log(response);
+      
         });
     }
 }

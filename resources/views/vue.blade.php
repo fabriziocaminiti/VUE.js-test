@@ -92,6 +92,9 @@
                             <button-counter></button-counter>
                             <button-counter></button-counter>
                             <button-counter></button-counter>
+                            <h2>-- FINE PAGINA PHP.BLADE--</h2>
+                            <h2>-- INIZIO VUE.JS--</h2>
+
                         </div>
                     </div>
                 </div>

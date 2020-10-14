@@ -1,8 +1,23 @@
 <template>  
     <div class="container">
+        <div class="mt-5 mb-5"> 
+        <navbar></navbar>
+        </div>
+      
+           <!-- <users></users>-->
+        <router-view></router-view>
         <div class="row">
             <div class="col-12">
                 <h1>{{title}}</h1>
+            </div>
+            <div class="col-12">
+                <button @click="selectedComponent='button-counter'" class="btn btn-danger">Counter</button>
+                 <button @click="selectedComponent='related-articles'" class="btn btn-danger">Suggerito</button>
+              
+              <keep-alive>
+              <component :is="selectedComponent"></component>
+              </keep-alive>
+            
             </div>
             <div class="col-12">
                 <ul>
@@ -16,17 +31,32 @@
                @messaggio="messageRecived"
                :id="article.id"
                :data="article" 
-               :img="article.img"></article-vue>
+               :img="article.img">
+            <h3>Calciatori</h3>
+               </article-vue>
+             </div>
+
+             <div class="col-12 col-md-4">
+                 <related-articles></related-articles>
+             </div>
+             <div class="col-12">
+                 <form-vue></form-vue>
              </div>
         </div>
     </div>
 </template>
 
 <script>
+
 import article from './article'
+import relatedArticles from './relatedArticles'
+import form from './form'
+import users from './users'
+import navbar from './navbar'
 export default {
     data(){
         return{
+        selectedComponent : 'button-counter',
         title : 'Articoli serie A',
         articles:[
                 {id:1, title:'Lukaku', contenuto: 'bomber inter',img:'https://staticfanpage.akamaized.net/wp-content/uploads/sites/27/2020/08/lukaku1-638x425.jpg'},
@@ -40,7 +70,12 @@ export default {
     }
   },
   components:{
-        'article-vue': article
+        'article-vue': article,
+        'related-articles': relatedArticles,
+        'form-vue': form,
+        'users' : users,
+        'navbar' : navbar
+
     },
   methods:{
       messageRecived(id){

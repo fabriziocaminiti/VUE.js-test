@@ -2,6 +2,19 @@ require('./bootstrap');
 
 import Vue from 'vue';
 import { template, reduce } from 'lodash';
+
+import VueRouter from 'vue-router'
+Vue.use(VueRouter);
+
+
+import { routes } from './routes'
+
+const router = new VueRouter({
+     routes,
+     mode : 'history',
+});
+
+
 Vue.component('app-vue',require('./custom-components/app.vue').default);
 Vue.component('button-counter',{
     data(){
@@ -15,7 +28,10 @@ Vue.component('button-counter',{
 
 });
 
+export const eventBus = new Vue();
+
 const app = new Vue ({
+    router,
     el: '#app',
     created(){
         console.log('created');
